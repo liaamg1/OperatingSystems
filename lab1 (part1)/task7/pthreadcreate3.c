@@ -17,12 +17,14 @@ should be sent to the parent thread by each child thread).
 struct threadArgs {
 	unsigned int id;
 	unsigned int numThreads;
+    unsigned int squaredId;
 };
 
 void* child(void* params) {
 	struct threadArgs *args = (struct threadArgs*) params;
 	unsigned int childID = args->id;
 	unsigned int numThreads = args->numThreads;
+    args->squaredId = args->id * args->id;
 	printf("Greetings from child #%u of %u\n", childID, numThreads);
 }
 
@@ -39,6 +41,7 @@ int main(int argc, char** argv) {
 		// create threads
 		args[id].id = id;
 		args[id].numThreads = numThreads;
+        
 		pthread_create(&(children[id]), // our handle for the child
 			NULL, // attributes of the child
 			child, // the function it should run
@@ -47,6 +50,9 @@ int main(int argc, char** argv) {
 	printf("I am the parent (main) thread.\n");
 	for (unsigned int id = 0; id < numThreads; id++) {
 		pthread_join(children[id], NULL );
+
+        printf("Thread %u squared id = %u\n", args[id].id, args[id].squaredId);
+
 	}
 	free(args); // deallocate args vector
 	free(children); // deallocate array
