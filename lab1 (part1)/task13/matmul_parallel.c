@@ -60,20 +60,6 @@ matmul_parallel(void* arg)
 }
 
 static void
-matmul_seq()
-{
-    int i, j, k;
-
-    for (i = 0; i < SIZE; i++) {
-        for (j = 0; j < SIZE; j++) {
-            c[i][j] = 0.0;
-            for (k = 0; k < SIZE; k++)
-                c[i][j] = c[i][j] + a[i][k] * b[k][j];
-        }
-    }
-}
-
-static void
 print_matrix(void)
 {
     int i, j;
@@ -88,12 +74,12 @@ print_matrix(void)
 int
 main(int argc, char **argv)
 {
-    /*
+    
     pthread_t threads[SIZE];
     int rows_id[SIZE];
-    */
+    
     init_matrix();
-    /*
+    
     for(int i=0; i<SIZE; ++i){
         rows_id[i]=i;
         pthread_create(&threads[i],NULL,matmul_parallel,&rows_id[i]);
@@ -103,7 +89,5 @@ main(int argc, char **argv)
         pthread_join(threads[i],NULL);
     }
     printf("%.2f (expected %.2f)\n", c[0][0], (double)SIZE);
-    */
-    matmul_seq();
-    //print_matrix();
+    //print_matrix()
 }
