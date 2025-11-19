@@ -69,7 +69,7 @@ int main(int argc, char *argv[]){
     unsigned int memory_length=0;
 
     for (int i = 0; i < no_phys_pages; i++) {
-    pages[i] = -1; //so that no accidenatl match occurs
+        pages[i] = -1; //so that no accidenatl match occurs
     }
 
     FILE *file = fopen(filename, "r");

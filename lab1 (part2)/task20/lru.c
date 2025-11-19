@@ -43,8 +43,8 @@ int main(int argc, char *argv[]){
     int time =0;
 
     for (int i = 0; i < no_phys_pages; i++) {
-    pages[i] = -1; //so that no accidenatl match occurs
-    recent[i]= -1;
+        pages[i] = -1; //so that no accidenatl match occurs
+        recent[i]= -1;
     }
 
     FILE *file = fopen(filename, "r");
