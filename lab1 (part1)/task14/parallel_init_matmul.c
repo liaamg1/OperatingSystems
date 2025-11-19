@@ -7,7 +7,7 @@ Parallelize the initialization of the matrices also.
 #include <stdlib.h>
 #include <pthread.h>
 
-#define SIZE 2048
+#define SIZE 1024
 
 double a[SIZE][SIZE];
 double b[SIZE][SIZE];
