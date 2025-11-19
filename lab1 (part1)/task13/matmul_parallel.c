@@ -88,11 +88,12 @@ print_matrix(void)
 int
 main(int argc, char **argv)
 {
-    
+    /*
     pthread_t threads[SIZE];
     int rows_id[SIZE];
+    */
     init_matrix();
-    
+    /*
     for(int i=0; i<SIZE; ++i){
         rows_id[i]=i;
         pthread_create(&threads[i],NULL,matmul_parallel,&rows_id[i]);
@@ -102,7 +103,7 @@ main(int argc, char **argv)
         pthread_join(threads[i],NULL);
     }
     printf("%.2f (expected %.2f)\n", c[0][0], (double)SIZE);
-    
-    //matmul_seq();
+    */
+    matmul_seq();
     //print_matrix();
 }
