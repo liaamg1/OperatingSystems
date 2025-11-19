@@ -30,7 +30,7 @@ int main(int argc, char *argv[]){
     unsigned int next_place= 0;
     unsigned int int_line= 0;
     for (int i = 0; i < no_phys_pages; i++) {
-    arr[i] = -1; //so that no accidenatl match occurs
+        arr[i] = -1; //so that no accidenatl match occurs
     }
 
     FILE *file = fopen(filename, "r");
