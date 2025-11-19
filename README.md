@@ -1,22 +1,9 @@
 # OperatingSystems
 
-installation -dev:
+To compile the file:
 
-    NOTE: This installation is for C on VS Code using Linux
+    type: gcc -O2 -o output_name_file file.c
 
-    1.
-        sudo apt update
+To run the programs:
 
-        apt list --upgradable
-
-        sudo apt upgrade
-
-        sudo apt autoremove
-    2.
-        sudo apt install gcc g++ clang gdb
-    3. 
-        Install VS Code extension: C/C++ Extension Pack
-    4.
-        Install VS Code extension: Code Runner
-
-    Installation -dev complete
+    type: ./output_name_file
